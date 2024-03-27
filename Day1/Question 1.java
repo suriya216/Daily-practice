@@ -13,7 +13,6 @@ class Question1{
                 stack.push(word); 
             }
         }
-        
         return stack.size();
     }
     public static void main(String[] args) {
