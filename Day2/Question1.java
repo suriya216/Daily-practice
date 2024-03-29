@@ -10,6 +10,7 @@ public class Question1 {
         for (int i = 0; i < n; i++) {
             q.add(nums[i]);
         }
+        
         while (!q.isEmpty()) {
             int currentItem = q.poll();
             res++;
