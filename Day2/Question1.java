@@ -1,25 +1,24 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Question1 {
     public static int timeToBuy(int[] nums, int K) {
         int n = nums.length;
         int res = 0;
-        Queue<Integer> q = new LinkedList<>();
+        List<Integer> l = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            q.add(nums[i]);
+            l.add(nums[i]);
         }
-        
-        while (!q.isEmpty()) {
-            int currentItem = q.poll();
-            res++;
-            K--;
-            if (K == 0) {
-                break;
-            }
-            if (currentItem > 1) {
-                q.add(currentItem - 1);
+        while (l.get(K)==0) {
+            for(int i=0;i<n;i++){
+                if(l.get(i)>0){
+                    res++;
+                    l.add(l.get(i)-1);
+                }
+                if(l.get(K)==0){
+                    break;
+                }
             }
         }
         return res;
